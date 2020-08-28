@@ -9,8 +9,30 @@ export const useJoke = () => {
     return joke2;
 }
 
-export const getJoke = () => {
-    return fetch("https://official-joke-api.appspot.com/jokes/random")
+export const getProgrammingJoke = () => {
+    return fetch("https://official-joke-api.appspot.com/jokes/programming/random")
+    .then(response => response.json())
+    .then(
+        parsedJoke => {
+            console.log(parsedJoke)
+            joke = parsedJoke;
+        }
+    )
+}
+
+export const getGeneralJoke = () => {
+    return fetch("https://official-joke-api.appspot.com/jokes/general/random")
+    .then(response => response.json())
+    .then(
+        parsedJoke => {
+            console.log(parsedJoke)
+            joke = parsedJoke;
+        }
+    )
+}
+
+export const getKnockJoke = () => {
+    return fetch("https://official-joke-api.appspot.com/jokes/knock-knock/random")
     .then(response => response.json())
     .then(
         parsedJoke => {
